@@ -1,0 +1,30 @@
+name: News Bot — Morning Briefing
+
+on:
+  schedule:
+    # 06:00 WIB = 23:00 UTC (hari sebelumnya)
+    - cron: "0 23 * * *"
+  workflow_dispatch:
+
+jobs:
+  morning:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Kirim Morning Briefing
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
+          RUN_MODE: morning
+        run: python news_bot.py
