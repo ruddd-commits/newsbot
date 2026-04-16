@@ -19,7 +19,7 @@ from email.utils import parsedate_to_datetime
 # ─────────────────────────────────────────────
 #  KONFIGURASI  (ambil dari environment / GitHub Secrets)
 # ─────────────────────────────────────────────
-BOT_TOKEN          = os.environ["8722488665:AAH_K6anoithS9v3Wb9KDraoC5i7UMtcbU8"]
+BOT_TOKEN          = os.environ[""]
 CHANNEL_ID         = os.environ["@scrabingnews"]
 
 SEEN_FILE          = "seen_articles.json"

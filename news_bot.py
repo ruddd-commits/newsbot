@@ -19,8 +19,8 @@ from email.utils import parsedate_to_datetime
 # ─────────────────────────────────────────────
 #  KONFIGURASI  (ambil dari environment / GitHub Secrets)
 # ─────────────────────────────────────────────
-BOT_TOKEN          = os.environ["TELEGRAM_BOT_TOKEN"]
-CHANNEL_ID         = os.environ["TELEGRAM_CHANNEL_ID"]
+BOT_TOKEN          = os.environ[""]
+CHANNEL_ID         = os.environ["@scrabingnews"]
 
 SEEN_FILE          = "seen_articles.json"
 MAX_PER_SOURCE     = 20
